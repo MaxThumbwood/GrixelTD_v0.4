@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Gridxel TD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Preconnect for faster and reliable font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'pixel': ['"Press Start 2P"', 'monospace', 'cursive'],
+            },
+            colors: {
+              retro: {
+                black: '#1a1c2c',
+                purple: '#5d275d',
+                red: '#b13e53',
+                orange: '#ef7d57',
+                yellow: '#ffcd75',
+                green: '#a7f070',
+                blue: '#38b764',
+                cyan: '#41a6f6',
+                white: '#f4f4f4',
+                gray: '#94b0c2',
+                dark: '#333c57',
+              }
+            },
+            boxShadow: {
+              'retro': '4px 4px 0px 0px rgba(0,0,0,0.5)',
+              'retro-sm': '2px 2px 0px 0px rgba(0,0,0,0.5)',
+              'retro-active': '0px 0px 0px 0px rgba(0,0,0,0)',
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .will-change-transform { will-change: transform; }
+      body {
+        background-color: #1a1c2c;
+        color: #f4f4f4;
+        overscroll-behavior: none;
+        overflow: hidden;
+        image-rendering: pixelated;
+        font-family: 'Press Start 2P', monospace; /* Default font with better fallback */
+      }
+      * { 
+        touch-action: manipulation; 
+        box-sizing: border-box;
+      }
+      
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes spin-reverse-slow {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+      }
+      .animate-spin-reverse-slow {
+        animation: spin-reverse-slow 25s linear infinite;
+      }
+      .bg-blueprint-grid {
+        background-image: 
+          linear-gradient(rgba(56, 183, 100, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(56, 183, 100, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.3",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
